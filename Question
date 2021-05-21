@@ -1,0 +1,75 @@
+Write a program to create an AVL Tree A and perform the operations insertion, deletion, search
+and traversal. Assume that the AVL Tree A does not contain duplicate values. Your program
+should contain the following functions.
+
+
+
+• Insert(A, k) – Inserts a new node with key ‘k’ into the tree A.
+• Search(A, k) - Searches for a node with key k in A, and returns a pointer to the node with
+key k if one exists; otherwise, it returns NIL.
+• DeleteNode(A,k) – Deletes a node with the key ‘k’ from the tree A.
+Note: The caller of this function is assumed to invoke Search() function to locate the node
+x.
+• GetBalance(A,k) – Prints the balance factor of the node with k as key in the tree A.
+Note:- Balance factor is an integer which is calculated for each node as:
+B f actor = height(lef t subtree) − height(right subtree)
+• .LeftRotate(A,k) – Perform left rotation in the tree A, with respect to the node k.
+• RightRotate(A,k) – Perform right rotation in the tree A, with respect to node k.
+• IsAVL(A) – Checks whether the tree pointed by A is an AVL tree or not.
+• PrintTree(A) – Prints the tree given by A in the paranthesis format as: ( t ( left-subtree
+)( right-subtree ) ). Empty parentheses ( ) represents a null tree.
+Note: After each insertion on an AVL Tree, it may result in increasing the height of the
+tree. Similarly, after each deletion on an AVL Tree, it may result in decreasing the height of
+the tree. To maintain height balanced property of AVL tree, we need to implement rotation
+functions.
+
+
+
+
+Input Format:
+• Each line contains a character from ‘i’, ‘d’, ‘s’, ‘b’, ‘p’ and ‘e’ followed by at most one integer.
+The integers, if given, are in the range [−106
+, 106
+].
+• Character ‘i’ is followed by an integer separated by space; a node with this integer as key is
+created and inserted into A.
+• Character ‘d’ is followed by an integer separated by space; the node with this integer as key
+is deleted from A and the deleted node’s key is printed.
+• Character ‘s’ is followed by an integer separated by space; find the node with this integer as
+key in A.
+• Character ‘b’ is followed by an integer separated by space; find the balance factor of the node
+with this integer as key in A and the print the balance-factor.
+• Character ‘p’ is to print the Parenthesis Representation of the tree A.
+• Character ‘e’ is to ‘exit’ from the program.
+
+
+Output Format:
+• The output (if any) of each command should be printed on a separate line.
+• For option ‘d’, print the deleted node’s key. If a node with the input key is not present in A,
+then print FALSE.
+• For option ‘s’, if the key is present in A, then print TRUE. If key is not present in A, then
+print FALSE.
+• For option ‘b’, if the key k is present in A, then print the balance factor of the node with k as
+key. If key is not present in A, then print FALSE.
+• For option ‘p’, print the space-separated Parenthesis Representation of the tree A.
+
+
+Sample Input:
+i 4
+i 6
+i 3
+i 2
+i 1
+s 2
+p
+b 4
+d 3
+p
+
+
+Sample Output:
+TRUE
+( 4 ( 2 ( 1 ( ) ( ) ) ( 3 ( ) ( ) ) ) ( 6 ( ) ( ) ) )
+1
+3
+( 4 ( 2 ( 1 ( ) ( ) ) ( ) ) ( 6 ( ) ( ) ) )
